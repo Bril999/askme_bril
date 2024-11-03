@@ -1,0 +1,21 @@
+{% load static %}
+<article class="card">
+                        <div class="card-left">
+                            <img src="{% static '/img/lm438.jpg' %}" alt="Image" class="card-image">
+                            <input type="number" class="card-likes" value="5">
+                        </div>
+                        <div class="card-right">
+                            <div class="card-right-content">
+                            <h4 class="card-title"><a href="{% url 'one_question' question.id %}">{{ question.title }}</a></h4>
+                            <div class="card-text">{{ question.text }}</div>
+                            </div>
+                            <div class="card-right-bottom">
+                                <a href="./answers.html">answer (3)</a>
+                                <div class="card-right-text">Tags:</div>
+                                <div class="card-tags">
+                                    <a href="#">Link</a>
+                                    <a href="#">Link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>

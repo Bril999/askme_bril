@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.6">
+       <title>Main</title>
+       <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+   </head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            AskPupkin
+        </div>
+        <div class="search-form">
+            <form action="#" method="GET">
+                <input class="search-form-input" type="text" name="query" placeholder="&#128269; Search">
+                <button class="search-form-button" type="button" onclick="location.href='#';">Ask!</button>
+            </form>
+
+
+        </div>
+        <div class="account">
+            <div class="account-image">
+                <img src="./image.jpg" alt="Image">
+            </div>
+            <div class="account-content">
+                <div class="account-name">
+                    Dr. Pepper
+                </div>
+                <div class="account-actions">
+                    <a href="./settings.html">settings</a>
+                    <a href="./login.html">log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <main class="container">
+            {% block titlebar %}
+            {% endblock %}
+        <div class="content">
+
+            {% block content %}
+            {% endblock %}
+
+            </div>
+            <aside class="sidebar">
+                <section class="popular-tags">
+                    <h3>Popular Tags</h3>
+                    <div class="tags">
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                    </div>
+                </section>
+                <section class="best-members">
+                    <h3>Best Members</h3>
+                    <ul class="best-members-list">
+                        <li><a href="#">Member</a></li>
+                        <li><a href="#">Member</a></li>
+                        <li><a href="#">Member</a></li>
+                        <li><a href="#">Member</a></li>
+                        <li><a href="#">Member</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>

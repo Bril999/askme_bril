@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.6">
+    <title>Ask</title>
+    <link rel="stylesheet" href="./../static/css/ask.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            AskPupkin
+        </div>
+        <div class="search-form">
+            <form action="#">
+                <input class="search-form-input" type="text" placeholder="&#128269; Search">
+                    <button class="search-form-button">Ask!</button>
+            </form>
+        </div>
+        <div class="account">
+            <div class="account-content">
+                <div class="account-actions">
+                    <a href="./login.html">log in</a>
+                    <a href="./signup.html">register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="divider"></div>
+    <main class="container">
+        <h1>New Questions</h1>
+        <div class="content">
+            <form action="#" class="input-form">
+    <div class="cards">
+        <article class="card">
+            <div class="card-left">
+                <label for="question-title" class="question-text">Title</label>
+            </div>
+            <div class="card-right">
+                <textarea id="question-title" placeholder="Enter your question here.." style="resize: vertical;"></textarea>
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-left">
+                <label for="question-text" class="question-text">Text</label>
+            </div>
+            <div class="card-right">
+                <textarea id="question-text" class="text-input" placeholder="Enter your text here.." style="resize: vertical;"></textarea>
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-left">
+                <label for="question-tags" class="question-text">Tags</label>
+            </div>
+            <div class="card-right">
+                <textarea id="question-tags" class="title-input" placeholder="Enter tags here.." style="resize: vertical;"></textarea>
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+        <div class="pagination">
+            <button type="submit" class="button-question">Ask!</button>
+        </div>
+    </div>
+</form>
+
+            <aside class="sidebar">
+                <section class="popular-tags">
+                    <h3>Popular Tags</h3>
+                    <div class="tags">
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                        <a href="#">Tag</a>
+                    </div>
+                </section>
+                <section class="best-members">
+                    <h3>Best Members</h3>
+                    <ul class="best-members-list">
+                        <li><a href="#">Member</a></li>
+                        <li><a href="#">Member</a></li>
+                        <li><a href="#">Member</a></li>
+                        <li><a href="#">Member</a></li>
+                        <li><a href="#">Member</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>
