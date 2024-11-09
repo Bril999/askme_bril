@@ -1,0 +1,28 @@
+{% load static %}
+
+<form action="#" method="post" class="input-form">
+    <div class="cards">
+        <article class="new-card">
+            <div class="card-left">
+                <label for="login" class="question-text">Login</label>
+            </div>
+            <div class="card-right">
+                <input id="login" class="title-input" type="text" placeholder="Enter your login here.." required>
+            </div>
+        </article>
+        <article class="new-card">
+            <div class="card-left">
+                <label for="email" class="question-text">Email</label>
+            </div>
+            <div class="card-right">
+                <input id="email" class="title-input" type="email" placeholder="youremail@mail.ru" required>
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+
+        <div class="creating-account">
+            <button type="submit" class="button-question">Log in!</button>
+            <a href="{% url 'signup' %}">create new account</a>
+        </div>
+    </div>
+</form>

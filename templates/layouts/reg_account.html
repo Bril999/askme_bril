@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class="account">
+            <div class="account-image">
+                <img src="./image.jpg" alt="Image">
+            </div>
+            <div class="account-content">
+                <div class="account-name">
+                    Dr. Pepper
+                </div>
+                <div class="account-actions">
+                    <a href="{% url 'settings' %}">settings</a>
+                    <a href="{% url 'login' %}">log out</a>
+                </div>
+            </div>
+        </div>

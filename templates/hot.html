@@ -1,5 +1,10 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
+
+{% block account %}
+    {% include 'layouts/reg_account.html' %}
+{% endblock %}
+
 {% block titlebar %}
 <div class="title-bar">
             <h1>Hot Questions</h1>
@@ -15,12 +20,6 @@
                     {% include 'layouts/question.html' %}
                 {% endfor %}
 
-                <div class="pagination">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>...</button>
-                    <button>100</button>
-                </div>
+                {% include 'layouts/paginator.html' %}
 
 {% endblock %}

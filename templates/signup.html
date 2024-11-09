@@ -1,127 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.6">
-    <title>Sign up</title>
-    <link rel="stylesheet" href="./../static/css/signup.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo">
-            AskPupkin
-        </div>
-        <div class="search-form">
-            <form action="#">
-                <input class="search-form-input" type="text" placeholder="&#128269; Search">
-            </form>
-        </div>
-        <div class="account">
-            <div class="account-content">
-                <div class="account-actions">
-                    <a href="./login.html">log in</a>
-                    <a href="./signup.html">register</a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="divider"></div>
-    <main class="container">
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block account %}
+    {% include 'layouts/not_reg_account.html' %}
+{% endblock %}
+        {% block titlebar %}
         <div class="title-bar">
             <h1>Registration</h1>
         </div>
-        <div class="content">
-            <form action="#" method="post" class="input-form">
-    <div class="cards">
-        <article class="card">
-            <div class="card-left">
-                <label for="signup-login" class="question-text">Login</label>
-            </div>
-            <div class="card-right">
-                <input id="signup-login" class="title-input" type="text" placeholder="Enter your login here.." required>
-                <div class="error-text">Error!</div>
-            </div>
-        </article>
-        <article class="card">
-            <div class="card-left">
-                <label for="signup-email" class="question-text">Email</label>
-            </div>
-            <div class="card-right">
-                <input id="signup-email" class="title-input" type="email" placeholder="youremail@mail.ru" required>
-                <div class="error-text">Error!</div>
-            </div>
-        </article>
-        <article class="card">
-            <div class="card-left">
-                <label for="nickname" class="question-text">NickName</label>
-            </div>
-            <div class="card-right">
-                <input id="nickname" class="title-input" type="text" placeholder="Enter your NickName here.." required>
-                <div class="error-text">Error!</div>
-            </div>
-        </article>
-        <article class="card">
-            <div class="card-left">
-                <label for="password" class="question-text">Password</label>
-            </div>
-            <div class="card-right">
-                <input id="password" class="title-input" type="password" placeholder="Enter your password here" required>
-                <div class="error-text">Error!</div>
-            </div>
-        </article>
-        <article class="card">
-            <div class="card-left">
-                <label for="confirm-password" class="question-text">Repeat password</label>
-            </div>
-            <div class="card-right">
-                <input id="confirm-password" class="title-input" type="password" placeholder="Repeat your password here" required>
-                <div class="error-text">Error!</div>
-            </div>
-        </article>
-        <article class="card">
-            <div class="card-left">
-                <label for="avatar" class="question-text">Upload avatar</label>
-            </div>
-            <div class="card-right">
-                <div class="avatar">
-                    <input id="avatar" type="file" placeholder="C:\...">
-                </div>
-
-                <div class="error-text">Error!</div>
-            </div>
-        </article>
-
-        <div class="creating-account">
-            <button type="submit" class="button-question">Sign up!</button>
-        </div>
-    </div>
-</form>
-
-            <aside class="sidebar">
-                <section class="popular-tags">
-                    <h3>Popular Tags</h3>
-                    <div class="tags">
-                        <a href="#">Tag</a>
-                        <a href="#">Tag</a>
-                        <a href="#">Tag</a>
-                        <a href="#">Tag</a>
-                        <a href="#">Tag</a>
-                        <a href="#">Tag</a>
-                        <a href="#">Tag</a>
-                    </div>
-                </section>
-                <section class="best-members">
-                    <h3>Best Members</h3>
-                    <ul class="best-members-list">
-                        <li><a href="#">Member</a></li>
-                        <li><a href="#">Member</a></li>
-                        <li><a href="#">Member</a></li>
-                        <li><a href="#">Member</a></li>
-                        <li><a href="#">Member</a></li>
-                    </ul>
-                </section>
-            </aside>
-        </div>
-    </main>
-</body>
-</html>
+{% endblock %}
+{% block content %}
+<div class="cards">
+    {% include 'layouts/signup_form.html' %}
+{% endblock %}

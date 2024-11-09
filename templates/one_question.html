@@ -1,5 +1,10 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
+
+{% block account %}
+    {% include 'layouts/reg_account.html' %}
+{% endblock %}
+
 {% block titlebar %}
 <div class="title-bar">
             <h1>New Questions</h1>
@@ -11,43 +16,8 @@
 {% block content %}
             <div class="cards">
                 {% include 'layouts/question.html' with question=item %}
-                </article>
-                <article class="card">
-                    <div class="card-left">
-                        <img src="./image.jpg" alt="Image" class="card-image">
-                        <input type="number" class="card-likes" value="5">
-                    </div>
-                    <div class="card-right">
-                        <div class="card-right-content">
-                        <div class="card-text">Text here</div>
-                        </div>
-                        <div class="card-right-bottom">
-                        <div class="card-tags">
-                            <input type="checkbox" class="checkbox" id="checkbox2" value="1" />
-                            <label for="checkbox2" class="question-text">Correct!</label>
-                        </div>
-</div>
+                {% include 'layouts/answer.html' %}
 
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-left">
-                        <img src="./image.jpg" alt="Image" class="card-image">
-                        <input type="number" class="card-likes" value="5">
-                    </div>
-                    <div class="card-right">
-                        <div class="card-right-content">
-                        <div class="card-text">Text here</div>
-                        </div>
-                        <div class="card-right-bottom">
-                            <div class="card-tags">
-                                <input type="checkbox" class="checkbox" id="checkbox1" value="1" />
-                                <label for="checkbox1" class="question-text">Correct!</label>
-                            </div>
-                        </div>
-
-                    </div>
-                </article>
                 <div class="divider"></div>
                 <textarea class="question-input" type="text" placeholder="Enter your answer here.."></textarea>
                 <div class="pagination">

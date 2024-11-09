@@ -1,0 +1,67 @@
+{% load static %}
+
+<form action="#" method="post" class="input-form">
+    <div class="cards">
+        <article class="new-card">
+            <div class="card-left">
+                <label for="signup-login" class="question-text">Login</label>
+            </div>
+            <div class="card-right">
+                <input id="signup-login" class="title-input" type="text" placeholder="Enter your login here.." required>
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+        <article class="new-card">
+            <div class="card-left">
+                <label for="signup-email" class="question-text">Email</label>
+            </div>
+            <div class="card-right">
+                <input id="signup-email" class="title-input" type="email" placeholder="youremail@mail.ru" required>
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+        <article class="new-card">
+            <div class="card-left">
+                <label for="nickname" class="question-text">NickName</label>
+            </div>
+            <div class="card-right">
+                <input id="nickname" class="title-input" type="text" placeholder="Enter your NickName here.." required>
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+        <article class="new-card">
+            <div class="card-left">
+                <label for="password" class="question-text">Password</label>
+            </div>
+            <div class="card-right">
+                <input id="password" class="title-input" type="password" placeholder="Enter your password here" required>
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+        <article class="new-card">
+            <div class="card-left">
+                <label for="confirm-password" class="question-text">Repeat password</label>
+            </div>
+            <div class="card-right">
+                <input id="confirm-password" class="title-input" type="password" placeholder="Repeat your password here" required>
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+        <article class="new-card">
+            <div class="card-left">
+                <label for="avatar" class="question-text">Upload avatar</label>
+            </div>
+            <div class="card-right">
+                <div class="avatar">
+                    <input id="avatar" type="file" placeholder="C:\...">
+                </div>
+
+                <div class="error-text">Error!</div>
+            </div>
+        </article>
+
+        <div class="creating-account">
+            <button type="submit" class="button-question">Sign up!</button>
+        </div>
+    </div>
+</form>

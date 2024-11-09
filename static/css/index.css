@@ -150,3 +150,129 @@ h3 {
     background-color: rgb(36, 31, 31);
 }
 
+.question {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.question-title {
+    margin: 0;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.question-right-bottom {
+    display: flex;
+    gap: 10px;
+}
+
+.question-image {
+    width: 130px;
+    height: 130px;
+    border: 1px solid black;
+}
+
+.question-likes {
+    width: 35px;
+    padding: 0;
+    margin-top: 10%;
+}
+
+.checkbox {
+    transform: scale(2);
+}
+
+.question-text {
+    font-size: 15px;
+}
+
+.button-question {
+    all: unset;
+    border: 1px solid black;
+    border-radius: 1px;
+    background-color:grey;
+    padding: 3px;
+    color: black;
+    cursor: pointer;
+    width: 60px;
+}
+
+.title-input {
+    height: 20px;
+    width: 50%;
+    padding-top: 0;
+    border: 2px solid black;
+}
+
+.text-input {
+    height: 300px;
+    width: 100%;
+    padding-top: 0;
+    border: 2px solid black;
+}
+
+.error-text {
+    font-size: 12px;
+    color: red;
+    margin-top: 10px;
+}
+
+.account-image {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.tag-text {
+    font-size: 30px;
+}
+
+.account-image-settings {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.image-path {
+    height: 20px;
+    width: 25%;
+    padding-top: 0;
+    border: 2px solid black;
+}
+
+.button-avatar {
+    all: unset;
+    border: 1px solid black;
+    border-radius: 1px;
+    background-color:cadetblue;
+    padding: 3px;
+    color: black;
+    cursor: pointer;
+}
+
+.avatar {
+    display: flex;
+    gap: 10px;
+}
+
+.creating-account {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20%;
+    gap: 15px;
+}
+
+.input-form {
+    height: 100%;
+    width: 50%;
+    padding-top: 0;
+}
+
+.new-card {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
