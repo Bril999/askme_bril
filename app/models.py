@@ -6,7 +6,7 @@ class QuestionManager(models.Manager):
     def new_questions(self):
         return self.order_by('-created_at')
 
-    def hot_questions(self):
+    def hot(self):
         return self.annotate(likes=Count('questionlike')).order_by('-likes')
 
 class Tag(models.Model):

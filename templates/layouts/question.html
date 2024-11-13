@@ -10,11 +10,12 @@
                             <div class="card-text">{{ question.text }}</div>
                             </div>
                             <div class="card-right-bottom">
-                                <a href="./answers.html">answer (3)</a>
+                                <a href="{% url 'one_question' question.id %}">answers</a>
                                 <div class="card-right-text">Tags:</div>
                                 <div class="card-tags">
-                                    <a href="#">Link</a>
-                                    <a href="#">Link</a>
+                                    {% for tag in question.tags.all %}
+                                        <a href="{% url 'tag' tag_name=tag.name %}">{{ tag.name }}</a>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>

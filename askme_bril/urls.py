@@ -29,4 +29,5 @@ urlpatterns = [
     path('ask/', views.ask, name='ask'),
     path('settings/', views.settings, name='settings'),
     path('admin/', admin.site.urls),
+    path('new_questions/', views.new_questions, name='new_questions'),
 ]
