@@ -2,7 +2,7 @@ import random
 import string
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
-from app.models import Question, Answer, Tag, QuestionLike, AnswerLike
+from app.models import Question, Answer, Tag, QuestionLike, AnswerLike, Profile
 
 
 class Command(BaseCommand):
@@ -14,14 +14,15 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         ratio = kwargs['ratio']
 
-        # Создание пользователей с уникальными именами
-        users = set()
-        while len(users) < ratio:
-            username = ''.join(random.choices(string.ascii_letters + string.digits, k=8))  # Создание случайного имени
-            user = User.objects.create_user(username=username, password='password')  # Уникальные имена
-            users.add(user)
+        users = []
+        for _ in range(ratio):
+            username = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+            user = User.objects.create_user(username=username, password='password')
 
-        self.stdout.write(self.style.SUCCESS(f'Created {len(users)} users'))
+            profile = Profile.objects.create(user=user)
+            users.append(profile)
+
+        self.stdout.write(self.style.SUCCESS(f'Created {len(users)} users and profiles'))
 
         tags = []
         for _ in range(ratio):
@@ -33,11 +34,13 @@ class Command(BaseCommand):
         questions = []
         for _ in range(ratio * 10):
             question = Question.objects.create(
-                user=random.choice(list(users)),  # Преобразование в список для выбора
+                user=random.choice(users),
                 title=f'Question title {_}',
-                text=f'Question text {_}')
+                text=f'Question text {_}'
+            )
             question.tags.add(
-                *random.sample(tags, k=random.randint(1, min(3, len(tags)))))
+                *random.sample(tags, k=2)
+            )
             questions.append(question)
 
         self.stdout.write(self.style.SUCCESS(f'Created {len(questions)} questions'))
@@ -47,7 +50,7 @@ class Command(BaseCommand):
             question = random.choice(questions)
             answer = Answer.objects.create(
                 question=question,
-                user=random.choice(list(users)),  # Преобразование в список для выбора
+                user=random.choice(users),
                 text=f'Answer text {_}'
             )
             answers.append(answer)
@@ -56,7 +59,7 @@ class Command(BaseCommand):
 
         question_likes = []
         for _ in range(ratio * 200):
-            user = random.choice(list(users))
+            user = random.choice(users)
             question = random.choice(questions)
             if not QuestionLike.objects.filter(user=user, question=question).exists():
                 like = QuestionLike.objects.create(user=user, question=question)
@@ -66,7 +69,7 @@ class Command(BaseCommand):
 
         answer_likes = []
         for _ in range(ratio * 200):
-            user = random.choice(list(users))
+            user = random.choice(users)
             answer = random.choice(answers)
             if not AnswerLike.objects.filter(user=user, answer=answer).exists():
                 like = AnswerLike.objects.create(user=user, answer=answer)

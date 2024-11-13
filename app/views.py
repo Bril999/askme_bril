@@ -1,6 +1,6 @@
 import copy
-
-from django.shortcuts import render
+from .models import Question, Answer, Profile, Tag
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 QUESTIONS = [
@@ -25,7 +25,8 @@ def paginate(objects_list, request, per_page=10):
 
     return page
 def index(request):
-    page = paginate(QUESTIONS, request, per_page=5)
+    questions = Question.objects.all()
+    page = paginate(questions, request, per_page=5)
     return render(
         request, 'index.html',
         context={'questions': page.object_list, 'page_obj': page}
@@ -65,7 +66,7 @@ def settings(request):
     )
 
 def question(request, question_id):
-    one_question = QUESTIONS[question_id]
+    one_question = get_object_or_404(Question, id=question_id)
     return render(
         request, 'one_question.html',
         context={'item': one_question}
